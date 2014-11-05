@@ -1,0 +1,12 @@
+---
+- hosts: all
+  roles:
+    - { role: "azavea.build-essential" }
+    - { role: "azavea.git" }
+    - { role: "azavea.nginx" }
+    - { role: "azavea.python" }
+    - { role: "azavea.pip" }
+    - { role: "azavea.postgresql" }
+    - { role: "azavea.postgresql-support" }
+    - { role: "azavea.unzip" }
+
