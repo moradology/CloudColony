@@ -1,3 +1,6 @@
 ---
 - name: Install pip
-  apt: pkg=python3-pip={{ pip_version }} state=present
+  apt: pkg=python-pip={{ pip_version }} state=present
+
+- name: Pip install frozen requirements
+  pip: requirements=/projects/lab_inventory/deploy/requirements.pip

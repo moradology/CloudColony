@@ -1,12 +1,12 @@
 ---
 - hosts: all
   roles:
-    - { role: "azavea.build-essential" }
-    - { role: "azavea.git" }
-    - { role: "azavea.nginx" }
-    - { role: "azavea.python" }
-    - { role: "azavea.pip" }
-    - { role: "azavea.postgresql" }
-    - { role: "azavea.postgresql-support" }
-    - { role: "azavea.unzip" }
+    - { role: "ansible-build-essential" }
+    - { role: "ansible-git" }
+    - { role: "ansible-nginx" }
+    - { role: "ansible-python" }
+    - { role: "ansible-pip" }
+    - { role: "ansible-postgresql" }
+    - { role: "ansible-postgresql-support" }
+    - { role: "ansible-unzip" }
 
