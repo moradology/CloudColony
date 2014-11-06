@@ -1,3 +1,4 @@
 ---
 nginx_version: "stable"
 nginx_delete_default_site: False
+gunicorn_socket: "http://unix:/tmp/gunicorn.sock:"

@@ -6,6 +6,7 @@
     - { role: "ansible-nginx" }
     - { role: "ansible-python" }
     - { role: "ansible-pip" }
+    - { role: "ansible-gunicorn" }
     - { role: "ansible-postgresql" }
     - { role: "ansible-postgresql-support" }
     - { role: "ansible-unzip" }

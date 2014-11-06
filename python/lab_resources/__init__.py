@@ -2,6 +2,7 @@
 import os.path
 
 from flask import Flask
+from werkzeug.contrib.fixers import ProxyFix
 
 from flask.ext.sqlalchemy import SQLAlchemy
 
@@ -11,15 +12,13 @@ from .database import db
 from .animal_inventory.models import Mouse
 
 
-def initiate_labapp():
-    app = Flask(__name__)
-    app.config.from_object('lab_resources.settings.common.DevelopmentConfig')
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+app = Flask(__name__)
+app.config.from_object('lab_resources.settings.common.DevelopmentConfig')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+db.init_app(app)
+register_routes(app)
 
-    db.init_app(app)
-
-    register_routes(app)
-    return app
+app.wsgi_app = ProxyFix(app.wsgi_app)
 
 
 def setup_database(app):
@@ -30,7 +29,7 @@ def setup_database(app):
         db.session.add(mouse)
         db.session.commit()
 
-def engage():
+if __name__ == "__main__":
     app = initiate_labapp()
     setup_database(app)
     app.run()

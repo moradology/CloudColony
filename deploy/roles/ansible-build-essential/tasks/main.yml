@@ -1,3 +1,6 @@
 ---
 - name: "Install build-essential"
   apt: pkg=build-essential state=present
+
+- name: "Install libevent"
+  apt: pkg=libev-libevent-dev state=present

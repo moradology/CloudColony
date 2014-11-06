@@ -6,6 +6,9 @@ MarkupSafe==0.23
 SQLAlchemy==0.9.8
 Werkzeug==0.9.6
 alembic==0.6.7
+gevent==1.0.1
+greenlet==0.4.5
+gunicorn==19.1.1
 itsdangerous==0.24
 restless==2.0.1
 six==1.8.0
