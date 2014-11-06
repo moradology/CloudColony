@@ -1,0 +1,9 @@
+---
+gunicorn_ppa: "ppa:gunicorn/ppa"
+gunicorn_workers: 4
+gunicorn_worker_connections: 600
+gunicorn_log: "{{ log_dir }}/gunicorn.log"
+gunicorn_socket: "unix:/tmp/gunicorn.sock"
+gunicorn_debug: "True"
+
+

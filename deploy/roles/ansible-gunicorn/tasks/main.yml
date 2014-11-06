@@ -1,0 +1,10 @@
+---
+- name: Install Python
+  apt: pkg=python-software-properties state=present
+
+- name: Install Upstart script for gunicorn
+  template: src=gunicorn.j2 dest=/etc/init/gunicorn.conf
+  notify:
+    - Restart gunicorn
+
+

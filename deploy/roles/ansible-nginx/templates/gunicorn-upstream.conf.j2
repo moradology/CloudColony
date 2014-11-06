@@ -1,0 +1,4 @@
+
+upstream app_server {
+  server unix:/tmp/gunicorn.sock fail_timeout=0;
+}

@@ -1,0 +1,9 @@
+---
+## PATHS ##
+app_name: lab_inventory
+proj_dir: /projects
+app_dir: "{{ proj_dir }}/{{app_name}}"
+log_dir: "{{ app_dir }}/logs"
+python_app_dir: "{{ app_dir }}/python"
+static_dir: "{{ app_dir }}/static"
+
