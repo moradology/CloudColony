@@ -14,7 +14,7 @@ from .animal_inventory.models import Mouse
 
 app = Flask(__name__)
 app.config.from_object('lab_resources.settings.common.DevelopmentConfig')
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://yourusername:yourpassword@localhost:5432/yournewdb'
 db.init_app(app)
 register_routes(app)
 
