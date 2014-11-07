@@ -3,7 +3,7 @@
   npm: name=bower global=yes
 
 - name: Install bower dependencies
-  command: bower install
+  command: bower install --allow-root
   args:
     chdir: "{{ deploy_dir }}"
     creates: "{{ static_dir }}/components/angular/"
