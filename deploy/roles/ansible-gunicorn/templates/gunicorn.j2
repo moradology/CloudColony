@@ -11,6 +11,6 @@ respawn
 
 chdir {{ python_app_dir }}
 
-exec gunicorn lab_resources:app -k gevent --worker-connections {{ gunicorn_worker_connections }} --workers {{ gunicorn_workers }} --log-file "{{ gunicorn_log }}" -b "{{ gunicorn_socket }}" --timeout 300 --keep-alive 600 --debug
+exec gunicorn CloudColony:app -k gevent --worker-connections {{ gunicorn_worker_connections }} --workers {{ gunicorn_workers }} --log-file "{{ gunicorn_log }}" -b "{{ gunicorn_socket }}" --timeout 300 --keep-alive 600 --debug
 
 
