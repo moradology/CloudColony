@@ -1,0 +1,10 @@
+---
+- name: Install bower
+  npm: name=bower global=yes
+
+- name: Install bower dependencies
+  command: bower install
+  args:
+    chdir: "{{ deploy_dir }}"
+    creates: "{{ static_dir }}/components/angular/"
+

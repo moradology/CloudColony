@@ -57,5 +57,6 @@ target/
 .vagrant/
 deploy/.vagrant/
 
-# Logs
+# Extra Dirs
 logs/*
+static/components/*

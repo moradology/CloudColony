@@ -3,4 +3,4 @@
   apt: pkg=python-pip={{ pip_version }} state=present
 
 - name: Pip install frozen requirements
-  pip: requirements=/projects/lab_inventory/deploy/requirements.pip
+  pip: requirements="{{ deploy_dir }}/requirements.pip"

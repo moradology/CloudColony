@@ -7,6 +7,11 @@
     - { role: "ansible-python" }
     - { role: "ansible-pip" }
     - { role: "ansible-gunicorn" }
+<<<<<<< Updated upstream
+=======
+    - { role: "ansible-nodejs" }
+    - { role: "ansible-bower" }
+>>>>>>> Stashed changes
     - { role: "ansible-postgresql" }
     - { role: "ansible-postgresql-support" }
     - { role: "ansible-unzip" }
