@@ -21,7 +21,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network :forwarded_port, guest: 8000, host: 8850
 
   # NFS
-  config.vm.synced_folder "../", "/projects/lab_inventory", nfs: true
+  config.vm.synced_folder "../", "/projects/CloudColony", nfs: true
 
   # PROVISIONER
   config.vm.provision "ansible" do |ansible|
