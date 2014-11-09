@@ -11,6 +11,7 @@ from .base_resource import BaseResource
 
 
 class MouseResource(BaseResource):
+    model = Mouse
     preparer=FieldsPreparer(fields={
         'id': 'id',
         'name': 'name',
@@ -19,11 +20,10 @@ class MouseResource(BaseResource):
     })
 
     def create(self):
-        db.session.add(Mouse(name="TestMouse"))
+        db.session.add(self.model(name="TestMouse"))
         db.session.commit()
         return
 
-    def list(self):
-        return Mouse.query.all()
+
 
 
