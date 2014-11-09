@@ -2,7 +2,7 @@
 from sqlalchemy import Column
 from sqlalchemy.types import VARCHAR
 
-from lab_resources.database import db
+from CloudColony.database import db
 
 from .thing import Thing
 

@@ -3,7 +3,7 @@ from uuid import uuid4
 
 from restless.fl import FlaskResource
 
-from lab_resources.database import db
+from CloudColony.database import db
 from ..models import Mouse
 
 #from tracked_resources.models import Mouse
