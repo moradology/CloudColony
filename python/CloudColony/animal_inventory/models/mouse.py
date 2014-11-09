@@ -4,9 +4,9 @@ from sqlalchemy.types import VARCHAR
 
 from CloudColony.database import db
 
-from .thing import Thing
+from .base_model import BaseModel
 
-class Mouse(Thing):
+class Mouse(BaseModel):
     __tablename__ = 'mice'
     name = db.Column(VARCHAR)
 

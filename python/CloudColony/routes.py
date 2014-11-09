@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from .animal_inventory.resources import MouseResource
+from .animal_inventory.api import MouseResource
 
 def register_routes(app):
     """Register routes below to provided app"""
