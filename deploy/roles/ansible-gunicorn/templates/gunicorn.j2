@@ -2,7 +2,7 @@
 
 description "Gunicorn upstart script"
 
-start on runlevel [2345]
+start on vagrant-mounted
 stop on runlevel [!2345]
 
 kill timeout 30
@@ -11,6 +11,6 @@ respawn
 
 chdir {{ python_app_dir }}
 
-exec gunicorn CloudColony:app -k gevent --worker-connections {{ gunicorn_worker_connections }} --workers {{ gunicorn_workers }} --log-file "{{ gunicorn_log }}" -b "{{ gunicorn_socket }}" --timeout 300 --keep-alive 600 --debug
+exec gunicorn CloudColony:app -k gevent --worker-connections {{ gunicorn_worker_connections }} --workers {{ gunicorn_workers }} --log-file "{{ gunicorn_log }}" -b "{{ gunicorn_socket }}" --timeout 300 --keep-alive 600 --debug --reload
 
 
