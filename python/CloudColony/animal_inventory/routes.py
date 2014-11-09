@@ -2,7 +2,7 @@
 
 from CloudColony import app
 
-from .resources import MouseResource
+from .api import MouseResource
 
 
 MouseResource.add_url_rules(app, rule_prefix='/api/mice/')

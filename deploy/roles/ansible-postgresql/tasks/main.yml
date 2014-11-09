@@ -25,6 +25,12 @@
   notify:
     - Restart PostgreSQL
 
+- name: Drop database
+  postgresql_db: name={{ dbname }}
+                 encoding='UTF-8'
+                 state=absent
+  sudo: yes
+  sudo_user: postgres
 
 - name: Ensure database is created
   postgresql_db: name={{ dbname }}

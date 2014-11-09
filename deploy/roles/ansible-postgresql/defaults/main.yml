@@ -6,7 +6,7 @@ postgresql_port: 5432
 postgresql_data_directory: /var/lib/postgresql/{{ postgresql_version }}/main
 postgresql_log_min_duration_statement: -1
 postgresql_hba_mapping: []
-
+postgresql_tz: 'US/Eastern'
 
 dbname: "cloud_colony"
 dbuser: "flask_cloud_colony"
