@@ -1,5 +1,6 @@
+"use strict";
 // for attribution
-angular.module('CloudColony').constant('config', {
+angular.module('cloudColony').constant('config', {
 
     debug: true,
 

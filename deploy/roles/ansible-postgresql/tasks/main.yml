@@ -25,12 +25,18 @@
   notify:
     - Restart PostgreSQL
 
+- name: Halt gunicorn
+  service: name=gunicorn state=stopped
+
 - name: Drop database
   postgresql_db: name={{ dbname }}
                  encoding='UTF-8'
                  state=absent
   sudo: yes
   sudo_user: postgres
+
+- name: Start gunicorn
+  service: name=gunicorn state=started
 
 - name: Ensure database is created
   postgresql_db: name={{ dbname }}
