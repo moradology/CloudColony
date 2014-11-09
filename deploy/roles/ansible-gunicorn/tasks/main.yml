@@ -4,7 +4,7 @@
 
 - name: Install Upstart script for gunicorn
   template: src=gunicorn.j2 dest=/etc/init/gunicorn.conf
-  notify:
-    - Restart gunicorn
 
+- name: Restart gunicorn
+  service: name=gunicorn state=restarted
 
