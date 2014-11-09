@@ -12,6 +12,9 @@
     - postgresql-{{ postgresql_version }}={{ postgresql_package_version }}
     - postgresql-server-dev-{{ postgresql_version }}={{ postgresql_package_version }}
 
+- name: Install postgres contrib
+  apt: pkg=postgresql-contrib-{{ postgresql_version }} state=present
+
 - name: Configure PostgreSQL host-based authentication
   template: src=pg_hba.conf.j2 dest=/etc/postgresql/{{ postgresql_version }}/main/pg_hba.conf
   notify:
@@ -21,3 +24,26 @@
   template: src=postgresql.conf.j2 dest=/etc/postgresql/{{ postgresql_version }}/main/postgresql.conf
   notify:
     - Restart PostgreSQL
+
+
+- name: Ensure database is created
+  postgresql_db: name={{ dbname }}
+                 encoding='UTF-8'
+  sudo: yes
+  sudo_user: postgres
+
+- name: Enable hstore support on db
+  command: psql -d {{ dbname }} -c "CREATE EXTENSION hstore;"
+  sudo: yes
+  sudo_user: postgres
+  ignore_errors: yes
+
+- name: Ensure user has access to database
+  postgresql_user: db={{ dbname }} password={{ dbpass }} name={{ dbuser }} role_attr_flags=NOSUPERUSER,NOCREATEDB
+  sudo: yes
+  sudo_user: postgres
+
+- name: Create tables for all models in flask
+  command: python {{ python_app_dir}}/make_tables.py
+
+

@@ -3,7 +3,7 @@ from sqlalchemy import Column, Integer
 from sqlalchemy.types import TIMESTAMP
 from sqlalchemy.sql import func
 
-from lab_resources.database import db
+from CloudColony.database import db
 
 class Thing(db.Model):
     __abstract__ = True

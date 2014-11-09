@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from lab_resources import app
+from CloudColony import app
 
 from .resources import MouseResource
 

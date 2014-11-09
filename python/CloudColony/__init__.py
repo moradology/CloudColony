@@ -13,25 +13,16 @@ from .animal_inventory.models import Mouse
 
 
 app = Flask(__name__)
-app.config.from_object('lab_resources.settings.common.DevelopmentConfig')
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://yourusername:yourpassword@localhost:5432/yournewdb'
+app.config.from_object('CloudColony.settings.common.DevelopmentConfig')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://flask_cloud_colony:balrog@localhost/cloud_colony'
 db.init_app(app)
 register_routes(app)
 
 app.wsgi_app = ProxyFix(app.wsgi_app)
 
 
-def setup_database(app):
+if __name__ == "__main__":
     with app.app_context():
         db.create_all()
-        mouse = Mouse()
-        mouse.name = "X11"
-        db.session.add(mouse)
-        db.session.commit()
-
-if __name__ == "__main__":
-    app = initiate_labapp()
-    setup_database(app)
-    app.run()
 
 
