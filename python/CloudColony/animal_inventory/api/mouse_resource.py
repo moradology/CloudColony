@@ -4,14 +4,14 @@ from uuid import uuid4
 from restless.fl import FlaskResource
 from restless.preparers import FieldsPreparer
 
-from CloudColony.database import db
 from ..models import Mouse
-
-from .base_resource import BaseResource
-
+from ...database import db
+from ...abstract.api import BaseResource
 
 class MouseResource(BaseResource):
+
     model = Mouse
+
     preparer=FieldsPreparer(fields={
         'id': 'id',
         'name': 'name',

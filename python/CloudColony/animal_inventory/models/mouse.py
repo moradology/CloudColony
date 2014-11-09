@@ -2,13 +2,11 @@
 from sqlalchemy import Column
 from sqlalchemy.types import VARCHAR
 
-from CloudColony.database import db
+from ...database import db
+from ...abstract.models import BaseModel, OrganismMixin
 
-from .base_model import BaseModel
-
-class Mouse(BaseModel):
+class Mouse(OrganismMixin, BaseModel):
     __tablename__ = 'mice'
-    name = db.Column(VARCHAR)
 
 
 
