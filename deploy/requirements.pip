@@ -13,3 +13,4 @@ itsdangerous==0.24
 restless==2.0.1
 six==1.8.0
 wsgiref==0.1.2
+psycopg2==2.5.4
