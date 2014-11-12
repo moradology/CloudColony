@@ -1,6 +1,6 @@
 'use strict'
 angular.module('cloudColony')
-.controller('RootController',
+.controller('LoginController',
             ['$cookieStore', 'config',
              function($cookieStore, config) {
 

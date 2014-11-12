@@ -18,22 +18,22 @@ angular.module('cloudColony', [
     $stateProvider
         .state('login', {
             url: '/login',
-            templateUrl: '/views/auth/template.html',
+            templateUrl: '/views/login/template.html',
             controller: 'LoginController'
         })
-        .state('root', {
+        .state('navigation', {
             abstract: true,
-            templateUrl: '/views/root/template.html',
-            controller: 'RootController'
+            templateUrl: '/views/navigation/template.html',
+            controller: 'NavigationController'
         })
         .state('dashboard', {
-            parent: 'root',
+            parent: 'navigation',
             url: '/dashboard',
             templateUrl: '/views/dashboard/template.html',
             controller: 'DashboardController'
         })
         .state('settings', {
-            parent: 'root',
+            parent: 'navigation',
             url: '/settings',
             templateUrl: '/views/settings/template.html',
             controller: 'SettingsController'
