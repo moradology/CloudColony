@@ -12,30 +12,30 @@ angular.module('cloudColony', [
 ]).config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'config', '$httpProvider',
         function ($stateProvider, $urlRouterProvider, $locationProvider, config, $httpProvider) {
 
-    $urlRouterProvider.when('', '/inventory');
-    $urlRouterProvider.otherwise('/inventory');
+    $urlRouterProvider.when('', '/dashboard');
+    $urlRouterProvider.otherwise('/dashboard');
 
     $stateProvider
         .state('login', {
             url: '/login',
-            templateUrl: '/views/auth/login-partial.html',
-            controller: 'AuthController'
+            templateUrl: '/views/auth/template.html',
+            controller: 'LoginController'
         })
         .state('root', {
             abstract: true,
-            templateUrl: '/views/root/root-partial.html',
+            templateUrl: '/views/root/template.html',
             controller: 'RootController'
         })
         .state('dashboard', {
             parent: 'root',
             url: '/dashboard',
-            templateUrl: '/views/dashboard/dashboard-partial.html',
-            controller: 'LandingController'
+            templateUrl: '/views/dashboard/template.html',
+            controller: 'DashboardController'
         })
         .state('settings', {
             parent: 'root',
             url: '/settings',
-            templateUrl: '/views/settings/settings-partial.html',
+            templateUrl: '/views/settings/template.html',
             controller: 'SettingsController'
         });
 
