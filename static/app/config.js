@@ -7,7 +7,5 @@ angular.module('cloudColony').constant('config', {
     languages: {
         'English': 'en',
     },
-
     defaultLanguage: 'en',
-
 });

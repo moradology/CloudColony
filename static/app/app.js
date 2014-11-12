@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('cloudColony', [
+    'cc.resources',
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -79,11 +80,6 @@ angular.module('cloudColony', [
     var languageActual = (navigator.language || navigator.userLanguage).substring(0,2);
     /** list of IANA language tags used by browsers here:
     * http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry
-    *
-    * zh -> Chinese (macrolanguage tag)
-    * vi -> Vietnamese
-    * lha -> Laha (Viet Nam)
-    * nut -> Nung (Viet Nam)
     */
     var languageUsing = (_.contains(_.values(config.languages), languageActual) ? languageActual : config.defaultLanguage);
     $translateProvider.preferredLanguage(languageUsing);
