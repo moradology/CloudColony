@@ -1,0 +1,16 @@
+<header>
+    <div class="navigation-buttongroup">
+        <div ui-sref="dashboard" class="button--navigation" ng-class="{active: activeState === 'dashboard'}" id="navigation-transit">{{ 'NAV.DASHBOARD' | translate }}</div>
+        <div ui-sref="settings" class="button--navigation" ng-class="{active: activeState === 'settings'}" id="navigation-settings">{{ 'NAV.SETTINGS' | translate }}</div>
+        <div class="button--navigation pull-right dropdown">
+            <div class="dropdown-toggle" ng-disabled="disabled">
+                <!-- TODO: Insert icon here --> <span class="caret"></span>
+            </div>
+            <ul class="dropdown-menu" role="menu">
+                <li><a ng-click="logout()">{{ 'NAV.LOGOUT' | translate }}</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<div ui-view></div>

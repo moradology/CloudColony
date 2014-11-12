@@ -1,0 +1,32 @@
+{
+    "LANG": "English",
+    "NAV": {
+        "APP": "CloudColony",
+        "DASHBOARD": "Dashboard",
+        "LOGIN": "Login",
+        "LOGOUT": "Logout",
+        "SETTINGS": "Settings"
+    },
+    "STATUS": {
+    },
+    "ACTIONS": {
+    },
+    "UNITS": {
+    },
+    "TERM": {
+        "USERNAME": "Username",
+        "PASSWORD": "Password"
+    },
+    "CALCULATION": {
+    },
+    "VIEW": {
+    },
+    "UI": {
+        "BUTTON": {
+        }
+    },
+    "SETTINGS": {
+    },
+    "CHANGE_PW": {
+    }
+}

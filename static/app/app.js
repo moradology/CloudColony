@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('cloudColony', [
+    'cc.resources',
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -12,30 +13,30 @@ angular.module('cloudColony', [
 ]).config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'config', '$httpProvider',
         function ($stateProvider, $urlRouterProvider, $locationProvider, config, $httpProvider) {
 
-    $urlRouterProvider.when('', '/inventory');
-    $urlRouterProvider.otherwise('/inventory');
+    $urlRouterProvider.when('', '/dashboard');
+    $urlRouterProvider.otherwise('/dashboard');
 
     $stateProvider
         .state('login', {
             url: '/login',
-            templateUrl: '/views/auth/login-partial.html',
-            controller: 'AuthController'
+            templateUrl: '/views/login/template.html',
+            controller: 'LoginController'
         })
-        .state('root', {
+        .state('navigation', {
             abstract: true,
-            templateUrl: '/views/root/root-partial.html',
-            controller: 'RootController'
+            templateUrl: '/views/navigation/template.html',
+            controller: 'NavigationController'
         })
         .state('dashboard', {
-            parent: 'root',
+            parent: 'navigation',
             url: '/dashboard',
-            templateUrl: '/views/dashboard/dashboard-partial.html',
-            controller: 'LandingController'
+            templateUrl: '/views/dashboard/template.html',
+            controller: 'DashboardController'
         })
         .state('settings', {
-            parent: 'root',
+            parent: 'navigation',
             url: '/settings',
-            templateUrl: '/views/settings/settings-partial.html',
+            templateUrl: '/views/settings/template.html',
             controller: 'SettingsController'
         });
 
@@ -79,11 +80,6 @@ angular.module('cloudColony', [
     var languageActual = (navigator.language || navigator.userLanguage).substring(0,2);
     /** list of IANA language tags used by browsers here:
     * http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry
-    *
-    * zh -> Chinese (macrolanguage tag)
-    * vi -> Vietnamese
-    * lha -> Laha (Viet Nam)
-    * nut -> Nung (Viet Nam)
     */
     var languageUsing = (_.contains(_.values(config.languages), languageActual) ? languageActual : config.defaultLanguage);
     $translateProvider.preferredLanguage(languageUsing);
