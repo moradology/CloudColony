@@ -1,16 +1,30 @@
-<header>
-    <div class="navigation-buttongroup">
-        <div ui-sref="dashboard" class="button--navigation" ng-class="{active: activeState === 'dashboard'}" id="navigation-transit">{{ 'NAV.DASHBOARD' | translate }}</div>
-        <div ui-sref="settings" class="button--navigation" ng-class="{active: activeState === 'settings'}" id="navigation-settings">{{ 'NAV.SETTINGS' | translate }}</div>
-        <div class="button--navigation pull-right dropdown">
-            <div class="dropdown-toggle" ng-disabled="disabled">
-                <!-- TODO: Insert icon here --> <span class="caret"></span>
-            </div>
-            <ul class="dropdown-menu" role="menu">
-                <li><a ng-click="logout()">{{ 'NAV.LOGOUT' | translate }}</a></li>
-            </ul>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">{{'NAV.APP' | translate}}</a>
         </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a ui-sref="dashboard">{{ 'NAV.DASHBOARD' | translate }}</a></li>
+                <li><a ui-sref="settings">{{ 'NAV.SETTINGS' | translate }}</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">user<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">{{ 'NAV.LOGOUT' | translate }}</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!--/.nav-collapse -->
     </div>
-</header>
+</nav>
+
 
 <div ui-view></div>

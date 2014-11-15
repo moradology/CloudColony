@@ -1,0 +1,17 @@
+<form name="form">
+    <div class="form-group">
+        <label for="form-name">name</label>
+		<input id="form-name" class="form-control" name="formName" type="text" ng-model="data.name" required>
+    </div>
+
+    <button type="submit" class="btn btn-default" ng-click="save(data)" ng-disabled="form.$invalid">save</button>
+	<button type="reset" class="btn btn-default">cancel</button>
+</form>
+
+
+
+
+
+
+
+
