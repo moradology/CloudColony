@@ -13,3 +13,6 @@ itsdangerous==0.24
 restless==2.0.1
 six==1.8.0
 wsgiref==0.1.2
+ipython==2.3.1
+ipdb==0.8
+
