@@ -1,0 +1,2 @@
+# CloudColony
+[test](deploy/)
